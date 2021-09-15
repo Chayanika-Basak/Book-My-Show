@@ -9,7 +9,7 @@ const NavSm = () => {
         <>
             <div className="text-white flex items-center justify-between">
                 <div>
-                    <h3 className="text-2xl">
+                    <h3 className="text-2xl font-bold">
                         It All Starts Here!
                     </h3>
                     <span className="text-gray-400 text-xs flex items-center">
