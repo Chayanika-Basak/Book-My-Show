@@ -8,11 +8,10 @@ const HeroCarousel = () => {
     const settingsLg = {
         arrows: true,
         autoplay: true,
-        centerMode: true,
         centerPadding: "300px",
         dots: true,
         infinite: true,
-        slideToShow: 3,
+        slideToShow: 2,
         slidesToScroll: 1,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />
@@ -29,12 +28,11 @@ const HeroCarousel = () => {
     };
 
     const images = [
-        "https://images.unsplash.com/photo-1552083375-1447ce886485?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-        "https://images.unsplash.com/photo-1614102073832-030967418971?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80",
-        "https://images.unsplash.com/photo-1605007493699-af65834f8a00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=751&q=80",
-        "https://images.unsplash.com/photo-1579294800821-694d95e86143?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80",
-        "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80",
-        "https://images.unsplash.com/photo-1610123598147-f632aa18b275?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=889&q=80"
+        "https://in.bmscdn.com/promotions/cms/creatives/1630951639039_chokhihavelitheurbanvillageexperience_webshowcase_1240x300_6sep.jpg",
+        "https://in.bmscdn.com/promotions/cms/creatives/1630993174880_rannutsavpromotionalbanners_webshowcase_1240x300.jpg",
+        "https://in.bmscdn.com/promotions/cms/creatives/1631003837980_gauravkapoorlivestandupcomedyshow_webshowcase_1240x300_7sep.jpg",
+        "https://in.bmscdn.com/promotions/cms/creatives/1628591224466_fnbgeneric.jpg",
+        "https://in.bmscdn.com/promotions/cms/creatives/1631025243018_basteachersdaycampaign_webshowcase_1240x300.jpg"
     ]
 
     return (

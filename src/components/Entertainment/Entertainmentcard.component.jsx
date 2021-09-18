@@ -8,7 +8,7 @@ const EntertainmentCard = (prop) => {
             <img 
             className="w-full h-full rounded-xl" 
             src={prop.src} 
-            alt="Entertainment Image"
+            alt="Entertainment"
             />
         </div>
     </>
@@ -34,7 +34,7 @@ const EntertainmentCardSlider = () => {
     const settings = {
         infinity: false,
         autoplay: false,
-        slidesToShow: 4,
+        slidesToShow: 5,
         slideToScroll: 4,
         initialSlide: 0,
         responsive: [{

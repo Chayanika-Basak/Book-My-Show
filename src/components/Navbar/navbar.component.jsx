@@ -1,8 +1,9 @@
 import React from "react";
 import { BiChevronRight, BiMenu } from "react-icons/bi";
-import { MdArrowDropDown, MdMovieCreation } from "react-icons/md";
+import { MdArrowDropDown} from "react-icons/md";
 import { BsSearch } from "react-icons/bs";
-import { RiMovie2Line } from "react-icons/ri";
+// import { RiMovie2Line } from "react-icons/ri";  MdMovieCreation
+import logo from "./bookmyshowlogocropped.jpg"
 
 const NavSm = () => {
     return (
@@ -40,10 +41,10 @@ const NavLg = () => {
     return(
         <>
             <div className="container mx-auto px-4 py-2 flex items-center justify-between">
-                <div className="flex items-center w-1/2 gap-3">
+                <div className="flex items-center w-3/5 gap-3">
                     {/* logo */}
-                    <div className="w-15 h-10">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ3IQriNpgCko1xpMDPwqA7HrlzbeRC42Xxgn9CHbZqnyZ4n1UCdjy8bieAv-BVL-4Lg&usqp=CAU"
+                    <div className="w-44 h-10">
+                        <img src={ logo }
                         alt="logo"
                         className="w-full h-full"
                         />
