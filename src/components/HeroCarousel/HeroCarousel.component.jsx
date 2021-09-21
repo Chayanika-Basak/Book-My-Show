@@ -1,10 +1,24 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import HeroSlider from "react-slick";
+import axios from "axios";
 
 //Component
 import { NextArrow, PrevArrow } from "./Arrows.component"
 
 const HeroCarousel = () => {
+
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+
+        const requestNowPlayingMovies = async () => {
+        const getImages = await axios.get("/movie/now_playing");
+        setImages(getImages.data.results);
+        };
+
+        requestNowPlayingMovies();
+    }, []);
+
     const settingsLg = {
         arrows: true,
         autoplay: true,
@@ -27,13 +41,13 @@ const HeroCarousel = () => {
         prevArrow: <PrevArrow />
     };
 
-    const images = [
-        "https://in.bmscdn.com/promotions/cms/creatives/1630951639039_chokhihavelitheurbanvillageexperience_webshowcase_1240x300_6sep.jpg",
-        "https://in.bmscdn.com/promotions/cms/creatives/1630993174880_rannutsavpromotionalbanners_webshowcase_1240x300.jpg",
-        "https://in.bmscdn.com/promotions/cms/creatives/1631003837980_gauravkapoorlivestandupcomedyshow_webshowcase_1240x300_7sep.jpg",
-        "https://in.bmscdn.com/promotions/cms/creatives/1628591224466_fnbgeneric.jpg",
-        "https://in.bmscdn.com/promotions/cms/creatives/1631025243018_basteachersdaycampaign_webshowcase_1240x300.jpg"
-    ]
+    // const images = [
+    //     "https://in.bmscdn.com/promotions/cms/creatives/1630951639039_chokhihavelitheurbanvillageexperience_webshowcase_1240x300_6sep.jpg",
+    //     "https://in.bmscdn.com/promotions/cms/creatives/1630993174880_rannutsavpromotionalbanners_webshowcase_1240x300.jpg",
+    //     "https://in.bmscdn.com/promotions/cms/creatives/1631003837980_gauravkapoorlivestandupcomedyshow_webshowcase_1240x300_7sep.jpg",
+    //     "https://in.bmscdn.com/promotions/cms/creatives/1628591224466_fnbgeneric.jpg",
+    //     "https://in.bmscdn.com/promotions/cms/creatives/1631025243018_basteachersdaycampaign_webshowcase_1240x300.jpg"
+    // ]
 
     return (
         <>
@@ -41,7 +55,7 @@ const HeroCarousel = () => {
                 <HeroSlider {...settings}>
                     {images.map((image) => (
                         <div className="w-full h-48 md:w-full md:h-96 py-3">
-                            <img src={image} alt="testing" className="w-full h-full" />
+                            <img src={`https://image.tmdb.org/t/p/original${image.backdrop_path}`} alt="testing" className="w-full h-full" />
                         </div>
                     ))}
                 </HeroSlider>
@@ -51,7 +65,7 @@ const HeroCarousel = () => {
                 <HeroSlider {...settingsLg}>
                     {images.map((image) => (
                         <div className="w-full h-96 px-2 py-3">
-                            <img src={image} alt="testing" className="w-full h-full rounded" />
+                            <img src={`https://image.tmdb.org/t/p/original${image.backdrop_path}`} alt="testing" className="w-full h-full rounded" />
                         </div>
                     ))}
                 </HeroSlider>

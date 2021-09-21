@@ -11,7 +11,7 @@ const Plays = () => {
                         <h2 className="text-2xl text-gray-800 font-bold py-3 px-2 mt-10 hidden lg:block">
                             Plays in National Capital Region (NCR)
                         </h2>
-                        <div className="flex items-center ml-2">
+                        <div className="hidden lg:block flex items-center ml-2">
                             <button className="text-sm text-coral-400 rounded-full px-4 m-1 border-coolGrey-100 border-2">
                                 Theatre
                             </button>
@@ -51,7 +51,7 @@ const Plays = () => {
                         </div>
                     </div>
 
-                    <div className="lg:w-3/12">
+                    <div className="hidden lg:block lg:w-3/12">
                         <h2 className="text-2xl font-bold mt-10 ml-6 py-3">
                             Filters
                         </h2>
