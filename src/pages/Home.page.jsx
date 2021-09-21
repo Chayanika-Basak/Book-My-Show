@@ -1,15 +1,43 @@
-import React from "react";
+import axios from "axios";
+import React, {useState, useEffect} from "react";
 import EntertainmentCardSlider from "../components/Entertainment/Entertainmentcard.component";
 import PosterSlider from "../components/PosterSlider/PosterSlider.component";
-import { RecommendedImages, PremierImages, OnlineStreamingImages } from "../config/Poster.config";
 
 const HomePage = () => {
+    const [popularMovies, setPopularMovies] = useState([]);
+    const [topRatedMovies, setTopRatedMovies] = useState([]);
+    const [upcomingMovies, setUpcomingMovies] = useState([]);
+
+    useEffect(() => {
+        const requestpopularMovies = async () => {
+            const getPopularMovies = await axios.get("/movie/popular");
+            setPopularMovies(getPopularMovies.data.results);
+        };
+        requestpopularMovies();
+    }, []);
+
+    useEffect(() => {
+        const requestTopRatedMovies = async () => {
+            const getTopRatedMovies = await axios.get("/movie/top_rated");
+            setTopRatedMovies(getTopRatedMovies.data.results);
+        };
+        requestTopRatedMovies();
+    }, []);
+
+    useEffect(() => {
+        const requestUpcomingMovies = async () => {
+            const getUpcomingMovies = await axios.get("/movie/upcoming");
+            setUpcomingMovies(getUpcomingMovies.data.results);
+        };
+        requestUpcomingMovies();
+    }, []);
+    
     return (
         <>
             <div className="container mx-auto px-4">
                 <div className="container mx-auto py-6 px-4">
                     <PosterSlider
-                    images={RecommendedImages}
+                    images={topRatedMovies}
                     title="Recommended Movies"
                     isDark={false}
                     />
@@ -40,7 +68,7 @@ const HomePage = () => {
 
                         <div className="w-full px-4">                   
                             <PosterSlider 
-                            images={PremierImages} 
+                            images={popularMovies} 
                             title="Premieres" 
                             subtitle="Brand new releases every Friday" 
                             isDark={true}
@@ -53,7 +81,7 @@ const HomePage = () => {
 
             <div className="container mx-auto px-8 py-6">
                 <PosterSlider
-                images={OnlineStreamingImages}
+                images={topRatedMovies}
                 title="Online Streaming Events"
                 isDark={false}
                 />
@@ -61,7 +89,7 @@ const HomePage = () => {
 
             <div className="container mx-auto px-8 py-6">
                 <PosterSlider
-                images={OnlineStreamingImages}
+                images={upcomingMovies}
                 title="Outdoor Events"
                 isDark={false}
                 />
@@ -69,7 +97,7 @@ const HomePage = () => {
 
             <div className="container mx-auto px-8 py-6">
                 <PosterSlider
-                images={OnlineStreamingImages}
+                images={upcomingMovies}
                 title="Laughter Therapy"
                 isDark={false}
                 />
@@ -77,7 +105,7 @@ const HomePage = () => {
 
             <div className="container mx-auto px-8 py-6">
                 <PosterSlider
-                images={OnlineStreamingImages}
+                images={upcomingMovies}
                 title="Popular Events"
                 isDark={false}
                 />
@@ -85,7 +113,7 @@ const HomePage = () => {
 
             <div className="container mx-auto px-8 py-6">
                 <PosterSlider
-                images={OnlineStreamingImages}
+                images={upcomingMovies}
                 title="Top Games and Sports Events"
                 isDark={false}
                 />

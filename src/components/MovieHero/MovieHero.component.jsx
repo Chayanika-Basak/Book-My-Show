@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { MovieContext } from '../../context/Movie.context'
 import MovieInfo from './MovieInfo.component'
 import poster from "./zack-snyder-s-justice-league-poster.jpg"
 import posterlg from "./zack-snyder-s-justice-league-posterlg.jpg"
