@@ -1,8 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useState } from 'react'
+import { Fragment} from 'react'
 import logo from "./bookmyshowlogocropped.jpg";
-
-//rzp_test_UScfYQh4DskA20
 
 function PaymentModal({isOpen, setIsOpen, price}) {
 

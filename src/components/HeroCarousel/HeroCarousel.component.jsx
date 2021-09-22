@@ -22,10 +22,10 @@ const HeroCarousel = () => {
     const settingsLg = {
         arrows: true,
         autoplay: true,
+        centerMode: true,
         centerPadding: "300px",
-        dots: true,
+        slidesToShow: 1,
         infinite: true,
-        slideToShow: 2,
         slidesToScroll: 1,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />
@@ -35,7 +35,7 @@ const HeroCarousel = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 3,
         slidesToScroll: 1,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />
