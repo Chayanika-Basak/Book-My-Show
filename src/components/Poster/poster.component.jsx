@@ -1,7 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from "react-router-dom";
+import { MovieContext } from "../../context/Movie.context";
 
 const Poster = (props) => {
+    const {movie} = useContext(MovieContext);
+    const genres = movie.genres?.map(({ name }) => name).join(", ");
+
     return (
         <Link to={`/movie/${props.id}`}>
             <div className="flex flex-col items-start gap-2 px-1 md:px-3">
@@ -15,7 +19,7 @@ const Poster = (props) => {
                 </h3>
                 <p className={`text-sm 
                 ${props.isDark ? "text-white" : "text-gray-700"}`}>
-                    {props.subtitle}
+                    {genres}
                 </p>
             </div>
         </Link>
